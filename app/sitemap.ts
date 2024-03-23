@@ -3,11 +3,10 @@
 ///Libraries -->
 import { MetadataRoute } from 'next'
 import { domainName } from '@/config/utils'
-//check the domain names 
-l
+
 ///Commencing code -->
 export default function sitemap(): MetadataRoute.Sitemap {
-
+//check the domain names 
   return [
     {
       url: domainName,
@@ -15,17 +14,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1,
     },
-    {
-      url: `${domainName}#whyUs`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
-      url: `${domainName}#courses`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    // {
+    //   url: `${domainName}#whyUs`,
+    //   lastModified: new Date(),
+    //   changeFrequency: 'monthly',
+    //   priority: 0.9,
+    // },
+    // {
+    //   url: `${domainName}#courses`,
+    //   lastModified: new Date(),
+    //   changeFrequency: 'monthly',
+    //   priority: 0.8,
+    // },
   ]
 }
