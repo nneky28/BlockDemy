@@ -55,7 +55,7 @@
             }
 
             .activeCategory {
-                border: 1px solid blue;
+                //border: 1px solid blue;
                 font-weight: 700;
                 opacity: 1;
                 border-bottom: 2px solid $text-color-2;
@@ -68,7 +68,7 @@
             display: none;
         }
 
-        border: 1px solid green;
+        //border: 1px solid green;
         @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 2%);
         @include size(40%, 5%);
         left: -22%;;
@@ -130,7 +130,7 @@
     }
 
     .courses {
-        border: 1px solid red;
+        //border: 1px solid red;
         @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 1%, $flex_d: row, $wrap: wrap);
         //padding: 1%;
         row-gap: 4%;
@@ -144,7 +144,7 @@
         }
 
         .carousel {
-            border: 1px solid black;
+            //border: 1px solid black;
             @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: column);
             @include size(31%, 65%);
             border-radius: 10px;
@@ -156,7 +156,7 @@
             }
 
             .imageDiv {
-                border: 1px solid green;
+                //border: 1px solid green;
                 overflow: hidden;
                 @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
                 @include size(100%, 40%);
@@ -170,7 +170,7 @@
             }
 
             .brief {
-                border: 1px solid red;
+                //border: 1px solid red;
                 @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: column);
                 @include size(90%, 40%);
 
@@ -204,7 +204,7 @@
                 }
 
                 .description {
-                    border: 1px solid red;
+                    //border: 1px solid red;
                     text-align: start;
                     @include text-layout($size: 14px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
                     position: relative;
@@ -234,13 +234,13 @@
             }
 
             .info {
-                border: 1px solid red;
+                //border: 1px solid red;
                 @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5%, $flex_d: row);
                 @include size(90%, 8%);
                 top: 5px;
 
                 .keyword {
-                    border: 1px solid red;
+                    //border: 1px solid red;
                     @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 1%, $flex_d: row);
                     @include size(auto, 100%);
                     padding: 0% 4%;
@@ -258,7 +258,7 @@
                 }
 
                 .rate {
-                    border: 1px solid red;
+                    //border: 1px solid red;
                     @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5px, $flex_d: row);
                     @include size(auto, 100%);
                     padding: 0% 4%;

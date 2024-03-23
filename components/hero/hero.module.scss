@@ -42,8 +42,9 @@
         top: 65%;
         left: 86.5%;
 
-        @include phoneMini {
+        @include phonePro {
             top: 75%;
+            left: 86%;
         }
     }
 
