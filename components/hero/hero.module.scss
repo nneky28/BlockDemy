@@ -84,7 +84,7 @@
 
             .brief { 
                 //border: 1px solid red;
-                @include flexBar($position: relative, $align: start, $justify: flex-start, $gap: 20px, $flex_d: column);
+                @include flexBar($position: relative, $align: flex-start, $justify: flex-start, $gap: 20px, $flex_d: column);
                 @include size(100%, 60%);
 
                 @include phonePro {
@@ -266,7 +266,7 @@
                         .text2 {
                             //border: 1px solid red;
                             @include text-layout($size: 15px, $l_height: 22px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
-                            text-align: start;
+                            text-align: flex-start;
 
                             @include tablet {
                                 font-size: 14px;
