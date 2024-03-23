@@ -1,0 +1,110 @@
+/* This contains the scss for the connect modal component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.main {
+    border: 3px solid $tertiary-color-1;
+    @include flexBar($position: fixed, $align: center, $justify: center, $gap: 5%, $flex_d: column);
+    @include size(50%, 70%);
+    background-color: $tertiary-color;
+    border-radius: 30px;
+    // margin: 0px;
+    // left: 0px;
+    // top: 85px;
+
+    @include tabletPro {
+        @include size(70%, 50%); 
+        top: 10%;
+    }
+
+    @include tablet {
+        width: 80%;
+        top: 15%;
+    }
+
+    @include phonePro {
+        @include size(90%, 60%); 
+        left: 10px;
+    }
+
+    @include phoneMini {
+        left: 0px;
+    }
+
+    .header {
+        //border: 1px solid slateblue;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+
+        span {
+            @include text-layout($size: 16px, $l_height: 20px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+            left: 5%;
+            //border: 1px solid red;
+            position: relative;
+        }
+
+        button {
+            background-color: transparent;
+            position: relative;
+            left: 80%;
+            border: none;
+
+            @include phonePro {
+                left: 50%;
+            }
+
+            @include phone {
+                left: 40%;
+            }
+
+            @include phoneMini {
+                left: 30%;
+            }
+
+            .icon {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .brief {
+        @include text-layout($size: 16px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+    }
+
+    .wallets {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 5%, $flex_d: column);
+        @include size(60%, 50%);
+
+        @include phonePro {
+            width: 80%;
+        }
+
+        @include phoneMini {
+            width: 90%;
+        }
+
+        .wallet1, .wallet2, .wallet3 {
+            border: 2px solid $tertiary-color-1;
+            //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+            @include size(90%, 25%);
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5%, $flex_d: row);
+            padding: 0% 5%;
+            border-radius: 10px;
+            background-color: transparent;
+            
+            @include phonePro {
+                width: 95%;
+            }
+
+            span {
+                @include text-layout($size: 16px, $l_height: 20px, $weight: 600, $family: "Noto Serif", $color: $text-color-2);
+            }
+
+            &:hover {
+                box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}

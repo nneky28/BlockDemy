@@ -1,0 +1,23 @@
+/* This contains the scss for the layout */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+    overflow-x: hidden; //hidden
+    overflow-y: auto;
+    //border: 1px solid black;
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+
+    button {
+        outline: none;
+    }
+}
