@@ -36,6 +36,7 @@ const Hero = () => {
 
     const {
         walletConnected,
+        setWalletConnected,
       } = useContext(DAppContext);
 
     ///This function is triggered when the user clicks on connect wallet
@@ -52,6 +53,12 @@ const Hero = () => {
         if (menu) {
             setMenu(false)
         }
+    }
+
+
+    const disconnectWallet = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>): void => {
+        e.preventDefault()
+        setWalletConnected(false)
     }
 
   return (
@@ -71,7 +78,7 @@ const Hero = () => {
                     {!walletConnected ? (
                         <button className={styles.btn1} onClick={(e) => openConnectModal(e)}><span>Connect Wallet</span></button>
                     ) : (
-                        <button className={styles.btn1} onClick={(e) => openConnectModal(e)}><span>Disconnect</span></button>
+                        <button className={styles.btn1} onClick={(e) => disconnectWallet(e)}><span>Disconnect</span></button>
                     )}
                         <button className={styles.btn2}><span>Explore</span></button>
                     </div>
