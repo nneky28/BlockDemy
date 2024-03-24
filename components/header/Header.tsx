@@ -9,7 +9,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { useMenuStore } from "@/config/store";
-
+import Image from "next/image";
+import logo from "@/public/images/logo.png"
 ///Commencing the code 
 
 /**
@@ -56,19 +57,21 @@ const Header = () => {
         };
       }, []);
 
-    const headerStyle = {
-        background: isNavbarTransparent ? 'white' : '#0A3270',
-        backdropFilter: 'blur(10px)',
-        color:isNavbarTransparent ?"black":'white'
-    };
+  
     
   return (
     <>
-        <header className={styles.header}  style={headerStyle}>
+        <header className={styles.header}  >
             <button className={styles.logo} onClick={() => router.push('/')}>
-                <span>LOGO</span>
+                <span>        
+            <Image
+            className={styles.logo}
+            alt="logo"
+            objectFit="contain"
+            src={logo}
+        /></span>
             </button>
-            <div className={styles.navBar}  style={headerStyle}>
+            <div className={styles.navBar}>
                 <form>
                     <button>
                         <SearchIcon className={styles.icon} />

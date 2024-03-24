@@ -15,17 +15,20 @@
     @include text-layout($size: 14px, $l_height: 27px, $weight: 600);
     padding: 10px 7%;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);//, 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10%;
+    z-index: 20%;
     position:fixed;
     top:0;
+    z-index: 10;
+    background-color: white;
 }
     
     .logo {
         //border: 1px solid red;
-        @include flexBar($position: relative, $align: center, $justify: center);
-        @include size(10%, 70%);
+        @include flexBar($position: relative, $align: flex-start, $justify: flex-start);
+        @include size(55%, 70%);
         background-color: transparent;
         border: none;
+   padding-bottom: 3%;
 
         @include phonePro {
             width: 25%;

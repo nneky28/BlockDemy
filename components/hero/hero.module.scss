@@ -22,7 +22,8 @@
         position: absolute;
         z-index: 5;
         top: 10%;
-        left: 0%;
+        left: 3%;
+        // right: 13%;
         
         @include tablet {
             left: -1%;

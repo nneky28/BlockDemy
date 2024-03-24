@@ -1,0 +1,469 @@
+/* This contains the scss for the course info component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.upper {
+    //border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: center, $justify: center, $gap: 5%, $flex_d: column);
+    @include size($height: 300px);
+    margin: 0px;
+    left: 0px;
+    top: 85px;
+    background-color: $tertiary-color-2;
+
+    .path {
+        //border: 1px solid salmon;
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 0%, $flex_d: row);
+        width: 85%;
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        span {
+            @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Noto Serif", $color: $tertiary-color);
+        }
+
+        .icon {
+            color: $tertiary-color;
+        }
+    }
+
+    .brief {
+        //border: 1px solid salmon;
+        @include flexBar($position: relative, $align: flex-start, $justify: flex-start, $gap: 10px, $flex_d: column);
+        width: 85%;
+
+        .span1 {
+            @include text-layout($size: 28px, $l_height: 33px, $weight: 700, $family: "Poppins", $color: $tertiary-color);
+            position: relative;
+        }
+
+        .span2 {
+            position: relative;
+            @include text-layout($size: 16px, $l_height: 24px, $weight: 400, $family: "Noto Serif", $color: $tertiary-color);
+            //border: 1px solid salmon;
+            width: 58%;
+        }
+    }
+
+    .info {
+        //border: 1px solid salmon;
+        @include flexBar($position: relative, $align: flex-start, $justify: flex-start, $gap: 10px, $flex_d: column);
+        width: 85%;
+        
+        .rating {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 20px, $flex_d: row);
+
+            .div {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: row);
+
+                span {
+                    @include text-layout($size: 10px, $l_height: 15px, $weight: 400, $family: "Noto Serif", $color: $star-color);
+                }
+
+                .icon {
+                    font-size: 0.8rem;
+                    color: $star-color;
+                }
+            }
+
+            .span {
+                @include text-layout($size: 10px, $l_height: 15px, $weight: 400, $family: "Noto Serif", $color: $tertiary-color);
+                position: relative;
+            }
+        }
+
+        .duration {
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: row);
+            width: 20%;
+
+            span {
+                @include text-layout($size: 12px, $l_height: 15px, $weight: 400, $family: "Noto Serif", $color: $tertiary-color);
+            }
+        }
+
+        .author {
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: row);
+            width: 20%;
+
+            span {
+                @include text-layout($size: 12px, $l_height: 15px, $weight: 400, $family: "Noto Serif", $color: $tertiary-color);
+            }
+        }
+    }
+}
+
+.lower {
+    //border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
+    @include size($height: 600px);
+    margin: 0px;
+    left: 0px;
+    top: 385px;
+
+    header {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 15%, $flex_d: row);
+        width: 85%;
+        left: 7.5%;
+
+        .title {
+            @include text-layout($size: 18px, $l_height: 25px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+        }
+
+        .rating {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: row);
+            width: 15%;
+
+            span {
+                @include text-layout($size: 10px, $l_height: 15px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+            }
+
+            .icon {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .top {
+        border: 1px solid $tertiary-color-2;
+        @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 0%, $flex_d: column);
+        @include size(50%, 35%);
+        border-radius: 10px;
+        left: 7.5%;
+
+        .title {
+            @include text-layout($size: 18px, $l_height: 25px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+            left: 5%;
+            position: relative;
+        }
+
+        ul {
+            //border: 1px solid red;
+            @include size(90%, 50%);
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: row, $wrap: wrap);
+            left: 5%;
+            padding: 1%;
+            row-gap: 5%;
+            column-gap: 5%;
+
+            li {
+                //border: 1px solid red;
+                position: relative;
+                @include size(45%, 45%);
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+            }
+        }
+    }
+
+    .bottom {
+        border: 1px solid $tertiary-color-2;
+        @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
+        @include size(50%, 35%);
+        border-radius: 10px;
+        left: 7.5%;
+
+        .title {
+            @include text-layout($size: 18px, $l_height: 25px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+            left: 5%;
+            position: relative;
+            width: 90%;
+            border-bottom: 1px solid $text-color-2;
+        }
+
+        .contents {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 1%, $flex_d: column);
+            @include size(90%, 55%);
+            left: 5%;
+
+            .content1, .content2, .content3, .content4 {
+                @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 1%, $flex_d: row);
+                //border: 1px solid red;
+                width: 100%;
+
+                .text {
+                    @include text-layout($size: 14px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+                }
+
+                button {
+                    background-color: transparent;
+                    border: none;
+
+                    span {
+                        @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cards {
+    //border: 1px solid red;
+    z-index: 8;
+    @include flexBar($position: absolute, $align: flex-start, $justify: center, $gap: 3%, $flex_d: column);
+    @include size(25%, 120%);
+    top: 120px;
+    left: 65%;
+
+    .card1 {
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 3%, $flex_d: column);
+        @include size(100%, 50%);
+        //border: 1px solid red;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: $tertiary-color;
+        box-shadow: 4px 4px 4px rgba(9, 19, 160, 0.3), 4px 4px 4px rgba(10, 18, 130, 0.3), 4px 4px 8px rgba(10, 18, 130, 0.3);
+
+        .imageDiv {
+            //border: 1px solid green;
+            overflow: hidden;
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+            @include size(100%, 40%);
+
+            .image {
+                object-fit: cover;
+                object-position: center 0%;
+                position: absolute;
+                @include size(100%, 100%);
+            }
+        }
+
+        .brief {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 4px, $flex_d: column);
+            @include size(85%, auto);
+            
+
+            .head {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 2%, $flex_d: row);
+                width: 100%;
+
+                .title {
+                    @include text-layout($size: 16px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+                }
+
+                .amount {
+                    @include flexBar($position: relative, $align: center, $justify: center, $gap: 4px, $flex_d: row);
+
+                    span {
+                        @include text-layout($size: 18px, $l_height: 20px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+                    }
+                }
+            }
+
+            .text {
+                @include text-layout($size: 12px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+                margin-bottom: 5px;
+            }
+        }
+
+        button {
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 4px, $flex_d: row);  
+            @include size(85%, 14%);
+            border-radius: 10px;
+            background-color: $primary-color;
+            border: 1px solid $primary-color;
+
+            span {
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $tertiary-color);
+            }
+
+            &:hover {
+                box-shadow: 2px 2px 2px rgba(9, 19, 160, 0.3), 2px 2px 2px rgba(10, 18, 130, 0.3), 2px 2px 2px rgba(10, 18, 130, 0.3);
+            }
+        }
+
+        .progress {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 4px, $flex_d: column);  
+            @include size(85%, 20%);
+
+            .span1 {
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+            }
+
+            .bar {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 0px, $flex_d: row);  
+                @include size(100%, 18%);
+                border-radius: 10px;
+                overflow: hidden;
+                background-color: $secondary-color;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15), 2px 2px 2px rgba(2, 0, 0, 0.12), 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+                .inner {
+                    position: relative;
+                    @include size(1%, 100%);
+                    background-color: $tertiary-color-2;
+                    z-index: 5;
+                }
+            }
+
+            .span2 {
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+            }
+        }
+    }
+
+    .recent {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5%, $flex_d: column);
+        @include size(100%, 45%);
+
+        .span {
+            @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+            width: 100%;
+        }
+    
+        .card2 {
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: column);
+            @include size(100%, 90%);
+            //border: 1px solid red;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 4px rgba(9, 19, 160, 0.3), 4px 4px 4px rgba(10, 18, 130, 0.3), 4px 4px 8px rgba(10, 18, 130, 0.3);
+    
+            .imageDiv {
+                //border: 1px solid green;
+                overflow: hidden;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+                @include size(100%, 40%);
+    
+                .image {
+                    object-fit: cover;
+                    object-position: center 0%;
+                    position: absolute;
+                    @include size(100%, 100%);
+                }
+            }
+
+            .brief {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: column);
+                @include size(90%, 40%);
+
+                .title {
+                    //border: 1px solid red;
+                    text-align: start;
+                    @include text-layout($size: 16px, $l_height: 26px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+                    position: relative;
+                    @include size(100%, 20%);
+
+                    @include tabletPro {
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+
+                    @include tablet {
+                        line-height: 18px;
+                        height: auto;
+                    }
+
+                    @include phonePro {
+                        font-size: 14px;
+                        line-height: 20px;
+                        height: auto;
+                    }
+
+                    @include phoneMini {
+                        font-size: 12px;
+                        line-height: 17px;
+                    }
+                }
+
+                .description {
+                    //border: 1px solid red;
+                    text-align: start;
+                    @include text-layout($size: 14px, $l_height: 18px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+                    position: relative;
+                    @include size(100%, 70%);
+                    opacity: 0.8;
+
+                    @include tabletPro {
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+
+                    @include tablet {
+                        font-size: 10px;
+                        line-height: 14px;
+                    }
+
+                    @include phonePro {
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+
+                    @include phoneMini {
+                        font-size: 10px;
+                        line-height: 14px;
+                    }
+                }
+            }
+
+            .info {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5%, $flex_d: row);
+                @include size(90%, 8%);
+                top: 5px;
+
+                .keyword {
+                    //border: 1px solid red;
+                    @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 1%, $flex_d: row);
+                    @include size(auto, 100%);
+                    padding: 0% 4%;
+                    border-radius: 5px;
+                    background-color: $tertiary-color-1;
+
+                    span {
+                        @include text-layout($size: 12px, $l_height: 18px, $weight: 400, $family: "Noto Serif", $color: $text-color-1);
+
+                        @include tabletPro {
+                            font-size: 10px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+
+                .rate {
+                    //border: 1px solid red;
+                    @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5px, $flex_d: row);
+                    @include size(auto, 100%);
+                    padding: 0% 4%;
+                    border-radius: 5px;
+                    background-color: $tertiary-color-1;
+
+                    .icon {
+                        font-size: 1rem;
+                        color: $star-color;
+                    }
+
+                    span {
+                        @include text-layout($size: 12px, $l_height: 18px, $weight: 400, $family: "Noto Serif", $color: $text-color-1);
+
+                        @include tabletPro {
+                            font-size: 10px;
+                            line-height: 14px;
+                        }
+                    }
+                }
+            }
+
+            // &:hover {
+            //     box-shadow: 4px 4px 4px rgba(9, 19, 160, 0.3), 4px 4px 4px rgba(10, 18, 130, 0.3), 4px 4px 8px rgba(10, 18, 130, 0.3);
+            // }
+        }
+    }
+}

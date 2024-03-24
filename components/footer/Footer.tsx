@@ -5,7 +5,8 @@
 import styles from "./footer.module.scss"
 import { useRouter, usePathname } from 'next/navigation';
 import { companyName, domainName } from "@/config/utils";
-
+import Image from "next/image";
+import fLogo from "@/public/images/fLogo.png"
 ///Commencing the code 
 
 /**
@@ -37,8 +38,15 @@ const Footer = () => {
             </div>
         </div>
         <div className={styles.brief}>
-            <span className={styles.span1}>LOGO</span>
-            <span className={styles.span2}>Empowering Minds, Empowering Futures</span>
+            <span className={styles.span1}>    
+             <Image
+            className={styles.logo}
+            alt="logo"
+            objectFit="contain"
+            src={fLogo}
+        /></span>
+         <span className={styles.span1}>BlockDemy</span>
+            <span className={styles.span1}>Empowering Minds, Empowering Futures</span>
         </div>
       </div>
     </>

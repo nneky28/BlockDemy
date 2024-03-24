@@ -32,8 +32,8 @@
 
     .category {
         //border: 1px solid green;
-        @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
-        width: 83%;
+        @include flexBar($position: relative, $justify: flex-start, $gap: 2%, $flex_d: row,  );
+        width: 80%;
 
         @include tabletPro {
             display: none;

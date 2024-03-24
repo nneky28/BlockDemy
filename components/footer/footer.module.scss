@@ -116,3 +116,18 @@
         }
     }
 }
+.logo {
+    //border: 1px solid red;
+    @include flexBar($position: relative, $align: flex-start, $justify: flex-start);
+    @include size(100%, 70%);
+    background-color: transparent;
+    border: none;
+
+    @include phonePro {
+        width: 25%;
+    }
+
+    span {
+        @include text-layout($size: 25px, $l_height: 28px, $weight: 700, $family: "Poppins", $color: $text-color-1);
+    }
+}

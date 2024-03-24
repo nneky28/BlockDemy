@@ -5,12 +5,13 @@
 import styles from "./course.module.scss";
 import { MouseEvent, useState, ChangeEvent } from "react";
 import { useRouter } from 'next/navigation';
-import { companyName, courseCategories } from "@/config/utils";
+import { companyName, courseCategories, toLowerDash } from "@/config/utils";
 import { courses } from "@/config/database";
 import Image from "next/image";
 import StarIcon from '@mui/icons-material/Star';
 import book1 from "@/public/images/book1.png"
 import SortIcon from '@mui/icons-material/Sort';
+import { ICourse } from "@/config/interfaces";
 
 ///Commencing the code 
 
@@ -38,6 +39,15 @@ const Course = () => {
     setSelectedCategory(() => e.target.value)
   }
 
+  ///This function is triggered when the user clicks on a course
+  const openCourse = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>, id: number): void => {
+    e.preventDefault()
+
+    let course: ICourse = courses[id]
+    let title = toLowerDash(course.title ? course.title : "")
+    router.push(`/${title}`)
+  }
+
   return (
     <div className={styles.main}>
         <span className={styles.span1}>{companyName} Courses</span>
@@ -58,7 +68,7 @@ const Course = () => {
         </div>
         <div className={styles.courses}>
               {courses.map((course, id) => (
-                <div className={styles.carousel} key={id}>
+                <div className={styles.carousel} key={id} onClick={(e) => openCourse(e, id)}>
                   <div className={styles.imageDiv}>
                     <Image
                       className={styles.image} 
