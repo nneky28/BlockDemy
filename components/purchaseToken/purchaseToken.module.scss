@@ -1,0 +1,68 @@
+/* This contains the scss for the purchase token component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.main {
+    border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: center, $justify: center, $gap: 5%, $flex_d: column);
+    @include size($height: 600px);
+    margin: 0px;
+    left: 0px;
+    top: 85px;
+
+    .path {
+        border: 1px solid salmon;
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 0%, $flex_d: row);
+        width: 85%;
+
+        button {
+            border: none;
+            background-color: transparent;
+        }
+
+        span {
+            @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Noto Serif", $color: $text-color-2);
+        }
+
+        .icon {
+            color: $text-color-2;
+        }
+    }
+
+    .bottom {
+        border: 1px solid salmon;
+        @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 0%, $flex_d: row);
+        @include size(85%, 80%);
+
+        .brief {
+            border: 1px solid salmon;
+            @include flexBar($position: relative, $align: flex-start, $justify: flex-start, $gap: 4%, $flex_d: column);
+            @include size(40%, 80%);
+
+            .brief1 {
+                border: 1px solid salmon;
+                @include text-layout($size: 35px, $l_height: 45px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+                width: 80%;
+            }
+
+            .brief2 {
+                border: 1px solid salmon;
+                @include text-layout($size: 16px, $l_height: 22px, $weight: 400, $family: "Poppins", $color: $text-color-2);
+                width: 70%;
+            }
+
+            .brief3 {
+                border: 1px solid salmon;
+                @include text-layout($size: 16px, $l_height: 22px, $weight: 400, $family: "Poppins", $color: $text-color-2);
+                width: 70%;
+            }
+        }
+
+        .card {
+            border: 1px solid saddlebrown;
+        }
+    }
+}
