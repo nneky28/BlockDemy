@@ -75,7 +75,7 @@ const CourseInfo = ({ course_ }: { course_: ICourse | undefined }) => {
                     {stars.map((star, id) => (
                         <StarBorderIcon className={styles.icon} key={id} />
                     ))}
-                    <span>Rate the course</span>
+                    <span style={{fontFamily: "Poppins"}}>Rate the course</span>
                 </div>
             </header>
             <div className={styles.top}>
