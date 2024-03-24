@@ -57,7 +57,7 @@ const WhyUs = () => {
                     <PersonOutlineIcon className={styles.icon} />
                 </div>
                 <span className={styles.span1}>Skill and Career Advancement</span>
-                <span className={styles.span2}> By acquiring new skills and knowledge through {companyName}'s courses, users enhance their professional capabilities, opening up opportunities for career advancement and personal growth</span>
+                <span className={styles.span2}> By acquiring new skills and knowledge through {companyName}s courses, users enhance their professional capabilities, opening up opportunities for career advancement and personal growth</span>
             </div>
             <div className={styles.reason4}>
                 <div className={styles.circle}>

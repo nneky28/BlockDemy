@@ -17,15 +17,15 @@ export const courseCategories: Array<string> = [
 ]
 
 ///This function connects Metamask wallet
-export const connectMetamask = async (): Promise<void> => {
-    if (window.ethereum) {
-        // Metamask is installed
-        console.log('Connected to Metamask');
-    } else {
-        // Metamask not detected
-        console.error('Metamask not detected');
-    }
-}
+// export const connectMetamask = async (): Promise<void> => {
+//     if (window.ethereum) {
+//         // Metamask is installed
+//         console.log('Connected to Metamask');
+//     } else {
+//         // Metamask not detected
+//         console.error('Metamask not detected');
+//     }
+// }
 
 ///This function connects Coinbase wallet
 export const connectCoinbase = (): void => {
