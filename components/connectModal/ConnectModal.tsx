@@ -10,7 +10,7 @@ import trust from "@/public/images/trust.png"
 import coinbase from "@/public/images/coinbase.png"
 import metamask from "@/public/images/metamask.png"
 import Image from "next/image";
-import { connectToWallet,  connectTrust, connectCoinbase } from "@/config/utils";
+import {   connectTrust, connectCoinbase } from "@/config/utils";
 import { Cartesify } from "@calindra/cartesify";
 import { BrowserProvider, Eip1193Provider } from 'ethers';
 
@@ -39,6 +39,8 @@ const ConnectModal = () => {
     const {
         walletConnected,
         setWalletConnected,
+        account,
+        setAccount
       } = useContext(DAppContext);
 
     const setModal = useModalStore(state => state.setModal);
@@ -64,6 +66,7 @@ const ConnectModal = () => {
                     const provider = new BrowserProvider(window.ethereum as Eip1193Provider);
                     const signer = await provider.getSigner();
                     setSigner(signer);
+                    setAccount(signer.getAddress());
                     setWalletConnected(true);
                   })
               
@@ -83,27 +86,39 @@ const ConnectModal = () => {
         }
     }
 
-    const InstructorRegister= async (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
-        // Pass the event object directly to connectWallet
+    const InstructorRegister = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
         
-       
         setLoading(true);
-    
-        let results;
-    
-        const response = await fetch("http://127.0.0.1:8383/your-endpoint", {
-            method: "POST",
+      
+        try {
+          const response = await fetch('/instructorRegister', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+              'Content-Type': 'application/json',
+              'x-msg_sender': account,
             },
-            body: JSON.stringify({ example: "Your body" }),
-            signer // Ensure signer is defined somewhere
-        });
-    
-        results = await response.json();
+            body: JSON.stringify({
+              courseName: 'Project Management',
+              certificateURI: 'https://example.com/certificate.pdf',
+              courseFee: '0.0ETH'
+            })
+          });
+      
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+      
+          const data = await response.json();
+          console.log('Response from backend:', data);
+          setResult(JSON.stringify(data));
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      
         setLoading(false);
-        setResult(JSON.stringify(results));
-    };
+      };
+      
 
     let buttonProps:any = {}
     if(loading) buttonProps.isLoading = true
