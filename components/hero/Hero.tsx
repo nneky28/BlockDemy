@@ -18,8 +18,9 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import Modal from "../modalBackground/Modal";
 import { useModalStore, useMenuStore } from "@/config/store";
-import { MouseEvent } from "react";
+import { MouseEvent, useContext } from "react";
 import ConnectModal from "../connectModal/ConnectModal";
+import { DAppContext } from "@/context";
 
 ///Commencing the code 
 
@@ -31,6 +32,11 @@ const Hero = () => {
     const setModal = useModalStore(state => state.setModal);
     const setMenu = useMenuStore(state => state.setMenu);
     const menu = useMenuStore(state => state.menu);
+
+
+    const {
+        walletConnected,
+      } = useContext(DAppContext);
 
     ///This function is triggered when the user clicks on connect wallet
     const openConnectModal = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
@@ -62,7 +68,11 @@ const Hero = () => {
                     <span className={styles.span1}>Unlock Learning Potential with {companyName}</span>
                     <span className={styles.span2}>Decentralized Education Empowered by <br />Cartesi Roll Ups & NFT Certificate</span>
                     <div className={styles.buttons}>
+                    {!walletConnected ? (
                         <button className={styles.btn1} onClick={(e) => openConnectModal(e)}><span>Connect Wallet</span></button>
+                    ) : (
+                        <button className={styles.btn1} onClick={(e) => openConnectModal(e)}><span>Disconnect</span></button>
+                    )}
                         <button className={styles.btn2}><span>Explore</span></button>
                     </div>
                 </div>

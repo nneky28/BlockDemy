@@ -6,6 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { companyName, domainName } from '@/config/utils';
 import type { Metadata } from 'next'
 import styles from "./layout.module.scss"
+import { DAppContextProvider } from '@/context';
 
 ///Commencing the code
 
@@ -35,8 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={styles.html} style={{ scrollBehavior: 'smooth' }}>
       <body>
+        
         <Header />
+        <DAppContextProvider>
         <main>{children}</main>
+        </DAppContextProvider>
         <Footer />
       </body>
     </html>

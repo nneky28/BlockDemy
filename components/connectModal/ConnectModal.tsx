@@ -4,7 +4,7 @@
 ///Libraries -->
 import styles from "./connectModal.module.scss"
 import { useModalStore } from "@/config/store";
-import { MouseEvent, useState } from "react";
+import { MouseEvent, useState, useContext } from "react";
 import CloseIcon from "@mui/icons-material/Close";
 import trust from "@/public/images/trust.png"
 import coinbase from "@/public/images/coinbase.png"
@@ -14,6 +14,8 @@ import { connectToWallet,  connectTrust, connectCoinbase } from "@/config/utils"
 import { Cartesify } from "@calindra/cartesify";
 import { BrowserProvider, Eip1193Provider } from 'ethers';
 
+
+import { DAppContext } from "@/context";
 ///Commencing the code 
 
 /**
@@ -33,6 +35,11 @@ const ConnectModal = () => {
     const [result, setResult] = useState<string>("");
     const [signer, setSigner] = useState<any>(undefined)
     const [loading, setLoading] = useState(false);
+
+    const {
+        walletConnected,
+        setWalletConnected,
+      } = useContext(DAppContext);
 
     const setModal = useModalStore(state => state.setModal);
     //const modal = useModalStore(state => state.modal);   
@@ -57,25 +64,29 @@ const ConnectModal = () => {
                     const provider = new BrowserProvider(window.ethereum as Eip1193Provider);
                     const signer = await provider.getSigner();
                     setSigner(signer);
+                    setWalletConnected(true);
                   })
               
                 } catch(error) {
                   console.log(error);
+                  setWalletConnected(false);
                   alert("Connecting to metamask failed.");
                 }
               
             // connectMetamask()
         } else if (wallet === "coinbase") {
-            connectCoinbase()
+            // connectCoinbase()
+            return;
         } else if (wallet === "trust") {
-            connectTrust()
+            return;
+            // connectTrust()
         }
     }
 
-    const callYourEndpoint = async (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+    const InstructorRegister= async (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
         // Pass the event object directly to connectWallet
         
-        await connectWallet(e, "metamask");
+       
         setLoading(true);
     
         let results;
@@ -107,7 +118,7 @@ const ConnectModal = () => {
        </div>
        <span className={styles.brief}>Connect a wallet to continue</span>
        <div className={styles.wallets}>
-            <button {...buttonProps} className={styles.wallet1} onClick={callYourEndpoint}>
+            <button className={styles.wallet1} onClick={(e) => connectWallet(e, "metamask")}>
                 <Image 
                     className={styles.image}
                     alt=""
