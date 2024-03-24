@@ -32,8 +32,8 @@
 
     .category {
         //border: 1px solid green;
-        @include flexBar($position: relative, $justify: flex-start, $gap: 2%, $flex_d: row,  );
-        width: 80%;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+        width: 83%;
 
         @include tabletPro {
             display: none;
@@ -138,6 +138,7 @@
         @include size(83%, 75%);
         overflow-x: hidden;
         overflow-y: auto;
+        z-index: 5;
 
         @include tabletPro {
             width: 85%;
@@ -148,9 +149,9 @@
             @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: column);
             @include size(31%, 65%);
             border-radius: 10px;
-            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.15), 0px 3px 3px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.3), 0px 3px 3px rgba(0, 0, 0, 0.3), 0px 1px 8px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-
+            cursor: pointer;
             @include phonePro {
                 width: 90%;
             }
@@ -267,7 +268,7 @@
 
                     .icon {
                         font-size: 1rem;
-                        color: #E9AC00;
+                        color: $star-color;
                     }
 
                     span {
@@ -280,12 +281,17 @@
                     }
                 }
             }
+
+            &:hover {
+                box-shadow: 4px 4px 4px rgba(9, 19, 160, 0.3), 4px 4px 4px rgba(10, 18, 130, 0.3), 4px 4px 8px rgba(10, 18, 130, 0.3);
+            }
         }
     }
 
     .book1 {
+        //border: 1px solid red;
         position: absolute;
-        z-index: 5;
+        //z-index: 5;
         left: 91.5%;
         top: 30%;
 

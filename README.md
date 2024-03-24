@@ -1,5 +1,7 @@
 # Blockdemy Frontend
 
+Product Requirement Documentation (PRD):https://docs.google.com/document/d/10rL7a3xzynyo2xkBOeyvzh4TC-BfcD7uvEiw01TocJo/edit
+
 ## Table of Contents
 1. [Overview](#overview)
 2. [Languages](#languages)
