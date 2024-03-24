@@ -132,7 +132,7 @@
     .courses {
         //border: 1px solid red;
         @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 1%, $flex_d: row, $wrap: wrap);
-        //padding: 1%;
+        padding: 1%;
         row-gap: 4%;
         column-gap: 2%;
         @include size(83%, 75%);
