@@ -21,7 +21,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@calindra/cartesify": "^0.1.4",
+    "@calindra/cartesify": "^0.1.2",
     "@types/node": "^20.11.30",
     "@types/react": "^18",
     "@types/react-dom": "^18.2.22",
