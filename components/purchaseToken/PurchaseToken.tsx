@@ -65,7 +65,7 @@ const PurchaseToken = ({ course_ }: { course_: ICourse | undefined }) => {
                         <span>2</span>
                     </div>
                 </div>
-                <button><span>Purchase Now</span></button>
+                <button style={{paddingRight:'20%'}}><span>Purchase Now</span></button>
             </div>
         </div>
     </div>

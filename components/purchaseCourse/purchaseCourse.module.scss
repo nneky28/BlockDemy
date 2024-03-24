@@ -203,13 +203,18 @@
                 //border: 1px solid red;
                 @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 5px, $flex_d: row);
                 @include size(90%, 5%);
-
+            
                 span {
                     @include text-layout($size: 16px, $l_height: 24px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
                 }
 
                 .amount {
                     @include flexBar($position: relative, $align: center, $justify: center, $gap: 5px, $flex_d: row);
+                   
+                }
+                .token{
+                    width:21px;
+                    height:21px
                 }
             }
 

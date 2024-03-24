@@ -85,7 +85,8 @@ const PurchaseCourse = ({ course_ }: { course_: ICourse | undefined }) => {
                     <div className={styles.amount}>
                         <Image
                             className={styles.token} 
-                            alt=""
+                            alt="token"
+                            objectFit='contain'
                             src={bdt}
                         />
                         <span>2</span>
