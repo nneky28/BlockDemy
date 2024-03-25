@@ -1,11 +1,7 @@
-/* This contains the scss for the course info component */
 
-//Libraries -->
 @import "@/styles/base.module";
-
-//Commencing the code -->
 .upper {
-    //border: 1px solid green;
+
     // @include flexBar($align: center, $justify: center, $gap: 2%);
     @include flexBar($position: absolute, $align: center, $justify: center, $gap: 5%, $flex_d: column);
     @include size($height: 200px);
