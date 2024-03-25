@@ -1,24 +1,19 @@
 
 "use client"
 import React, { useContext } from "react"; // Added React import
-
-// Libraries
 import Hero from "@/components/hero/Hero";
 import Course from "@/components/course/Course";
 import WhyUs from "@/components/whyUs/WhyUs";
 import CourseInfo from "@/components/courseInfo/CourseInfo";
-
 import { DAppContext } from "@/context";
+import { getCourse } from "@/config/utils";
+import { ICourse } from "@/config/interfaces";
 
-export default function Home() {
+
+export default function Home({ params: { course } }: { params: { course: string }}) {
   const { walletConnected } = useContext(DAppContext);
+  const courseInfo: ICourse | undefined = getCourse(course)
 
-
-  const courseData = {
-    title: "Your Course Title",
-    description: "Your Course Description",
-    // Add other properties as needed
-  };
 
   return (
     <main>
@@ -30,7 +25,7 @@ export default function Home() {
             <Course />
           </>
         ) : (
-          <CourseInfo course_={courseData} /> 
+          <CourseInfo course_={courseInfo} /> 
         )}
       </div>
     </main>
