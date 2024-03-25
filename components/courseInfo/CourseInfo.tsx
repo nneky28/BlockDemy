@@ -1,6 +1,4 @@
 "use client";
-// import styles from "./courseInfo.module.scss";
-import styles from "./courseInfo.module.scss"
 import Image from "next/image";
 import StarIcon from "@mui/icons-material/Star";
 import { useState, MouseEvent, useContext } from "react";
@@ -12,6 +10,7 @@ import frontend from "@/public/images/frontend.png";
 import { useRouter } from "next/navigation";
 import { toLowerDash } from "@/config/utils";
 import { DAppContext } from "@/context";
+import  styles from './courseInfo.module.scss';
 
 /**
  * @title Course Info Component
