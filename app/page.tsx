@@ -8,11 +8,13 @@ import CourseInfo from "@/components/courseInfo/CourseInfo";
 import { DAppContext } from "@/context";
 import { getCourse } from "@/config/utils";
 import { ICourse } from "@/config/interfaces";
+import { courses } from "@/config/database";
 
 
-export default function Home({ params: { course } }: { params: { course: string }}) {
+export default function Home() {
   const { walletConnected } = useContext(DAppContext);
-  const courseInfo: ICourse | undefined = getCourse(course)
+  const courseInfo: ICourse = courses[0]
+  console.log('courseInfo', courseInfo)
 
 
   return (
