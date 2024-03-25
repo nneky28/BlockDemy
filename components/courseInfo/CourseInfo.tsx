@@ -1,5 +1,6 @@
 "use client";
-import styles from "./courseInfo.module.scss";
+// import styles from "./courseInfo.module.scss";
+import styles from "./courseInfo.module.scss"
 import Image from "next/image";
 import StarIcon from "@mui/icons-material/Star";
 import { useState, MouseEvent, useContext } from "react";
