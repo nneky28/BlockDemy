@@ -1,7 +1,7 @@
-///This handles the purchase token page
+///This handles the redeem reward page
 
 ///Libraries -->
-import PurchaseToken from "@/components/purchaseToken/PurchaseToken"; 
+import TokenReward from "@/components/tokenReward/TokenReward";
 import { courses } from "@/config/database";
 import { ICourse } from "@/config/interfaces";
 import { toLowerDash, getCourse } from "@/config/utils";
@@ -11,13 +11,13 @@ import { toLowerDash, getCourse } from "@/config/utils";
 /**
  * @title Purchase Token page
  */
-export default async function PurchaseTokenPage(req: { params: { course: string}, searchParams: { query: string}}) {
+export default async function TokenRewardPage(req: { params: { course: string}, searchParams: { query: string}}) {
     //console.log("Req: ", req.params.course)
     const courseInfo: ICourse | undefined = getCourse(req.params.course)
 
     return (
-      <main className="purchase_token">
-        <PurchaseToken course_={courseInfo} />
+      <main className="token_reward">
+        <TokenReward course_={courseInfo} />
       </main>
     )
   }

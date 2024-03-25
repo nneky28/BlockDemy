@@ -2,7 +2,7 @@
 
 //Libraries -->
 import { create } from "zustand";
-import { IModalStore, IMenuStore } from "@/config/interfaces";
+import { IModalStore, IMenuStore, IIsEnrolledStore } from "@/config/interfaces";
 
 //Commencing code -->
 
@@ -16,4 +16,10 @@ export const useModalStore = create<IModalStore>((set) => ({
 export const useMenuStore = create<IMenuStore>((set) => ({
     menu: false,
     setMenu: (status) => set(() => ({ menu: status }))
+}))
+
+//Redeem Reward Status State Store
+export const useIsEnrolledStore = create<IIsEnrolledStore>((set) => ({
+    isEnrolled: false,
+    setIsEnrolled: (status) => set(() => ({ isEnrolled: status }))
 }))

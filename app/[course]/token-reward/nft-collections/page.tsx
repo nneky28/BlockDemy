@@ -1,7 +1,7 @@
-///This handles the purchase token page
+///This handles the nft collection page
 
 ///Libraries -->
-import PurchaseToken from "@/components/purchaseToken/PurchaseToken"; 
+import NFTCollection from "@/components/nftCollection/NFTCollection";
 import { courses } from "@/config/database";
 import { ICourse } from "@/config/interfaces";
 import { toLowerDash, getCourse } from "@/config/utils";
@@ -9,15 +9,15 @@ import { toLowerDash, getCourse } from "@/config/utils";
 ///Commencing the code -->
 
 /**
- * @title Purchase Token page
+ * @title NFT Collection page
  */
-export default async function PurchaseTokenPage(req: { params: { course: string}, searchParams: { query: string}}) {
+export default async function NFTCollectionPage(req: { params: { course: string}, searchParams: { query: string}}) {
     //console.log("Req: ", req.params.course)
     const courseInfo: ICourse | undefined = getCourse(req.params.course)
 
     return (
-      <main className="purchase_token">
-        <PurchaseToken course_={courseInfo} />
+      <main className="nft_collection">
+        <NFTCollection />
       </main>
     )
   }

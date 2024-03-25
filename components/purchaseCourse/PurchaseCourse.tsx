@@ -1,3 +1,4 @@
+
 "use client"
 ///Purchase Course component
 
@@ -85,8 +86,7 @@ const PurchaseCourse = ({ course_ }: { course_: ICourse | undefined }) => {
                     <div className={styles.amount}>
                         <Image
                             className={styles.token} 
-                            alt="token"
-                            objectFit='contain'
+                            alt=""
                             src={bdt}
                         />
                         <span>2</span>

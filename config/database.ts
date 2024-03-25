@@ -1,13 +1,17 @@
 //This acts as a database for the app
 
 ///Libraries -->
-import { ICourse } from "./interfaces";
+import { ICourse, INFT } from "./interfaces";
 import contract from "@/public/images/contract.png"
 import frontend from "@/public/images/frontend.png"
 import defi from "@/public/images/defi.png"
 import token from "@/public/images/token.png"
 import solidity from "@/public/images/solidity.png"
 import api from "@/public/images/api.png"
+import nft1 from "@/public/images/nft1.png"
+import nft2 from "@/public/images/nft2.png"
+import nft3 from "@/public/images/nft3.png"
+import nft4 from "@/public/images/nft4.png"
 
 ///Commencing the code
 ///The list of courses
@@ -54,4 +58,32 @@ export const courses: Array<ICourse> = [
         keyword: "Web3 Development",
         rating: "4.1"
     }
+]
+
+///This contains the list of nfts
+export const nfts: Array<INFT> = [
+    {
+        image: nft1,
+        name: "Virtual Future",
+        floor: "0.0026 ETH",
+        volume: "6 ETH"
+    },
+    {
+        image: nft2,
+        name: "Crypto Oddities",
+        floor: "0.0032 ETH",
+        volume: "3 ETH"
+    },
+    {
+        image: nft3,
+        name: "Whimsical Wonder",
+        floor: "0.0016 ETH",
+        volume: "8 ETH"
+    },
+    {
+        image: nft4,
+        name: "Virtual Treasure",
+        floor: "0.0022 ETH",
+        volume: "4 ETH"
+    },
 ]

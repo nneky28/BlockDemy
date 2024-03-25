@@ -20,7 +20,7 @@ const WhyUs = () => {
   //console.log('Current page:', routerPath);
 
   return (
-    <div className={styles.main}>
+    <div className={styles.main} id="why-us">
         <div className={styles.left}>
             <div className={styles.brief}>
                 <span className={styles.brief1}>Why Us?</span>

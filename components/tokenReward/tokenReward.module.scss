@@ -1,0 +1,296 @@
+/* This contains the scss for the token reward component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.top {
+    //border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: center, $justify: center, $gap: 0%, $flex_d: column);
+    @include size($height: 500px);
+    margin: 0px;
+    left: 0px;
+    top: 85px;
+
+    .images {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+        @include size(100%, 25%);
+
+        .image {
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+            @include size(12.5%, 100%);
+            overflow: hidden;
+
+            .img {
+                object-fit: cover;
+                object-position: center 0%;
+                position: absolute;
+                @include size(100%, 100%);
+            }
+        }
+
+        .brief {
+            //border: 1px solid red;
+            @include flexBar($position: absolute, $align: flex-start, $justify: center, $gap: 10px, $flex_d: column);
+            left: 7.5%;
+
+            .span1 {
+                @include text-layout($size: 24px, $l_height: 30px, $weight: 600, $family: "Poppins", $color: $tertiary-color);
+                text-align: start;
+            }
+
+            .span2 {
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $tertiary-color);
+                text-align: start;
+            }
+        }
+    }
+
+    .info {
+        //border: 1px solid red;
+        background-color: $secondary-color;
+        @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 25%, $flex_d: row);
+        @include size(100%, 75%);
+
+        .data {
+            //border: 1px solid purple;
+            @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 5%, $flex_d: column);
+            @include size(25%, 60%);
+            left: 12.5%;
+
+            .balance {
+                //border: 1px solid purple;
+                @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 5%, $flex_d: column);
+                @include size(100%, 30%);
+
+                .title {
+                    //border: 1px solid green;
+                    width: 100%;
+                    @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $text-color-2);
+                }
+
+                .nft_item {
+                    //border: 1px solid green;
+                    @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 2%, $flex_d: row);
+                    @include size(100%, auto);
+
+                    .nfts {
+                        //border: 1px solid green;
+                        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+                        @include size(auto, 100%);
+                    }
+
+                    .item {
+                        //border: 1px solid green;
+                        @include text-layout($size: 12px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $text-color-2);
+                        @include size(auto, 100%);
+                        text-align: end;
+                        @include flexBar($position: relative, $align: center, $justify: flex-end, $gap: 0%, $flex_d: column);
+                    }
+                }
+            }
+
+            .estimation {
+                //border: 1px solid purple;
+                @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 3%, $flex_d: row);
+                @include size(100%, 30%);
+
+                .span1 {
+                    @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $text-color-2);
+                }
+
+                .span2 {
+                    @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+                }
+            }
+        }
+
+        .buttons {
+            //border: 1px solid purple;
+            @include flexBar($position: relative, $align: flex-start, $justify: space-between, $gap: 5%, $flex_d: column);
+            @include size(20%, 60%);
+            left: 7.5%;
+
+            .btn1 {
+                border: 1px solid $primary-color;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 5%, $flex_d: row);
+                @include size(60%, 18%);
+                border-radius: 5px;
+                background-color: transparent;
+
+                span {
+                    @include text-layout($size: 13px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $text-color-2);
+                }
+
+                .icon {
+                    color: $star-color;
+                    font-size: 1rem;
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            .btn2 {
+                border: 1px solid $primary-color;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: row);
+                @include size(80%, 22%);
+                background-color: $primary-color;
+                border-radius: 5px;
+
+                span {
+                    @include text-layout($size: 14px, $l_height: 20px, $weight: 700, $family: "Noto Serif", $color: $tertiary-color);
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+
+        .book1 {
+            position: absolute;
+            left: 91.5%;
+        }
+    }
+}
+
+.bottom {
+    //border: 1px solid red;
+    @include flexBar($position: absolute, $align: center, $justify: flex-start, $gap: 5%, $flex_d: column);
+    @include size($height: 600px);
+    margin: 0px;
+    left: 0px;
+    top: 585px;
+
+    nav {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 8%, $flex_d: row);
+        @include size(85%, 10%);
+
+        button {
+            @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
+            @include size(auto, 60%); 
+            background-color: transparent;
+            border: none;
+            border-left: 1px solid $text-color-2;
+            padding-left: 20px;
+            padding-right: 20px;
+            //border-bottom: 1px solid $text-color-2;
+
+            span {
+                //border: 1px solid red;
+                left: 2%;
+                position: relative;
+                @include text-layout($size: 14px, $l_height: 20px, $weight: 500, $family: "Poppins", $color: $text-color-2);
+                text-align: start;
+            }
+
+            &:hover {
+
+                span {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .nav1 {
+            border-left: none;
+            border-bottom: 1px solid $text-color-2;
+        }
+    }
+
+    .header {
+        //border: 1px solid red;
+        @include text-layout($size: 24px, $l_height: 25px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+    }
+
+    .nfts {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 1.5%, $flex_d: row);
+        @include size(90%, 70%);
+
+        .nft {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 0%, $flex_d: column);
+            @include size(24%, 95%);
+            border-radius: 10px;
+
+            .imageDiv {
+                //border: 1px solid green;
+                overflow: hidden;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+                @include size(100%, 50%);
+                overflow: hidden;
+                border-radius: 10px;
+                //display: none;
+    
+                .img {
+                    object-fit: cover;
+                    object-position: center 0%;
+                    position: absolute;
+                    @include size(100%, 100%);
+                    //display: none;
+                }
+
+                .icon {
+                    position: absolute;
+                    font-size: 2rem;
+                    z-index: 55;
+                    color: $star-color;
+                    left: 85%;
+                    top: 10%;
+                }
+            }
+
+            .title {
+                @include text-layout($size: 14px, $l_height: 24px, $weight: 600, $family: "Poppins", $color: $text-color-2);
+                width: 90%;
+                //border: 1px solid red;
+            }
+
+            .floor_volume {
+                //border: 1px solid saddlebrown;
+                @include size(90%, auto);
+                @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 2%, $flex_d: row);
+
+                .floor, .volume {
+                    //border: 1px solid saddlebrown;
+                    @include size(auto, 100%);
+                    @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 5px, $flex_d: column);
+
+                    .text1 {
+                        @include text-layout($size: 10px, $l_height: 24px, $weight: 400, $family: "Poppins", $color: $text-color-2);
+                    }
+
+                    .text2 {
+                        @include text-layout($size: 14px, $l_height: 24px, $weight: 400, $family: "Poppins", $color: $text-color-2);
+                    }
+                }
+            }
+
+            button {
+                border: 1px solid $primary-color;
+                @include size(100%, 12%);
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+                background-color: $primary-color;
+                border-radius: 10px;
+
+                span {
+                    @include text-layout($size: 14px, $l_height: 24px, $weight: 400, $family: "Poppins", $color: $tertiary-color); 
+                }
+
+                .icon {
+                    color: $star-color;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 2px 2px 2px rgba(9, 19, 160, 0.3);
+            }
+        }
+    }
+}

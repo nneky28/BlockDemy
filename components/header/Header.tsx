@@ -3,7 +3,7 @@
 
 ///Libraries -->
 import styles from "./header.module.scss"
-import { useState, MouseEvent, useEffect } from "react";
+import { useState, MouseEvent } from "react";
 import { useRouter } from 'next/navigation';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -23,7 +23,7 @@ const Header = () => {
     const [query, setQuery] = useState<string>("")
     const setMenu = useMenuStore(state => state.setMenu);
     const menu = useMenuStore(state => state.menu);
-    const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
+
     ///This function is triggered when menu is clicked
     const viewMenu = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>): void => {
         e.preventDefault()
@@ -43,27 +43,11 @@ const Header = () => {
         
     }
 
-
-    useEffect(() => {
-        const handleScroll = () => {
-          const scrollThreshold = 200/* Set your desired scroll threshold */;
-          const shouldMakeNavbarOpaque = window.scrollY > scrollThreshold;
-          setIsNavbarTransparent(!shouldMakeNavbarOpaque);
-        };
-    
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-        };
-      }, []);
-
-  
-    
   return (
     <>
-        <header className={styles.header}  >
+        <header className={styles.header}>
             <button className={styles.logo} onClick={() => router.push('/')}>
-                <span>        
+            <span>        
             <Image
             className={styles.logo}
             alt="logo"
@@ -83,8 +67,8 @@ const Header = () => {
                       value={query}
                     />
                 </form>
-                <button className={styles.profile}>Your Profile</button>
-                <button className={styles.whyUs}>Why Us</button>
+                <button className={styles.profile} onClick={(e) => router.push("/profile")}>Your Profile</button>
+                <button className={styles.whyUs} onClick={(e) => router.push("/#why-us")}>Why Us</button>
             </div>
             <button className={styles.menu} onClick={(e) => viewMenu(e)}>
                 {menu ? (
@@ -106,8 +90,8 @@ const Header = () => {
                     value={query}
                 />
             </form>
-            <button className={styles.profile} onClick={(e) => openMenuLink(e, "")}>Your Profile</button>
-            <button className={styles.whyUs} onClick={(e) => openMenuLink(e, "")}>Why Us</button>
+            <button className={styles.profile} onClick={(e) => openMenuLink(e, "/profile")}>Your Profile</button>
+            <button className={styles.whyUs} onClick={(e) => openMenuLink(e, "/#why-us")}>Why Us</button>
         </div>
     </>
   );

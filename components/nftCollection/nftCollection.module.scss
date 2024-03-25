@@ -1,0 +1,56 @@
+/* This contains the scss for the nft collection component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.main {
+    //border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: center, $justify: center, $gap: 7%, $flex_d: column);
+    @include size($height: 800px);
+    margin: 0px;
+    left: 0px;
+    top: 85px;
+    //background-color: $secondary-color;
+
+    span {
+        width: 85%;
+        //border: 1px solid green;
+        @include text-layout($size: 20px, $l_height: 30px, $weight: 600, $family: "Poppins", $color: $text-color-2);
+        text-align: center;
+    }
+
+    .images {
+        //border: 1px solid red;
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row, $wrap: wrap);
+        @include size(60%, 70%);
+
+        .imageDiv {
+            //border: 1px solid green;
+            overflow: hidden;
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+            @include size(33.3%, 50%);
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            //border-radius: 10px;
+            //display: none;
+
+            .img {
+                object-fit: cover;
+                object-position: center 0%;
+                position: absolute;
+                @include size(100%, 100%);
+                //display: none;
+            }
+        }
+    }
+
+    .book2 {
+        position: absolute;
+        transform: scaleX(-1);
+        left: 90%;
+        top: 70%;
+    }
+}

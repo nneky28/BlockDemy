@@ -1,0 +1,167 @@
+/* This contains the scss for the profile component */
+
+//Libraries -->
+@import "@/styles/base.module";
+
+//Commencing the code -->
+.main {
+    //border: 1px solid green;
+    // @include flexBar($align: center, $justify: center, $gap: 2%);
+    @include flexBar($position: absolute, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+    @include size($height: 800px);
+    margin: 0px;
+    left: 0px;
+    top: 85px;
+    //background-color: $secondary-color;
+
+    .left {
+        @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 3%, $flex_d: column); 
+        background-color: $secondary-color;
+        @include size(40%, 100%);
+        //padding-right: 5%;
+        //padding-left: 5%;
+
+        .imageDiv {
+            //border: 1px solid green;
+            overflow: hidden;
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+            @include size(80px, 80px);
+            overflow: hidden;
+            border-radius: 10px;
+            left: 10%;
+            top: -7%;
+            //display: none;
+
+            .pro1 {
+                object-fit: cover;
+                object-position: center 0%;
+                position: absolute;
+                @include size(100%, 100%);
+                //display: none;
+            }
+        }
+
+        .links {
+            //border: 1px solid red;
+            @include size(80%, 60%);
+            left: 10%;
+            top: -7%;
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 3%, $flex_d: column); 
+
+            button {
+                //border: 1px solid red;
+                @include size(100%, 45px);
+                @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 3%, $flex_d: row); 
+                border-radius: 10px;
+                padding-left: 5%;
+                //padding-rigt: 5%;
+                background-color: transparent;
+                border: none;
+
+                span {
+                    @include text-layout($size: 14px, $l_height: 24px, $weight: 600, $family: "Noto Serif", $color: $text-color-2);
+                }
+
+                &:hover {
+                    border: 1px solid $primary-color;
+                }
+            }
+
+            .btn2 {
+                border: 1px solid $primary-color;
+                background-color: $primary-color;
+
+                span {
+                    color: $tertiary-color;
+                }
+            }
+        }
+    }
+
+    .right {
+        @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: column); 
+        //background-color: $secondary-color;
+        @include size(60%, 100%);
+
+        .profile {
+            //border: 1px solid red;
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: column);
+            @include size(30%, 20%);
+
+            .imageDiv {
+                //border: 1px solid green;
+                overflow: hidden;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 2%, $flex_d: row);
+                @include size(80px, 80px);
+                overflow: hidden;
+                border-radius: 10px;
+                //display: none;
+    
+                .pro1 {
+                    object-fit: cover;
+                    object-position: center 0%;
+                    position: absolute;
+                    @include size(100%, 100%);
+                    //display: none;
+                }
+            }
+
+            span {
+                @include text-layout($size: 14px, $l_height: 18px, $weight: 600, $family: "Noto Serif", $color: $text-color-2);
+                position: relative;
+            }
+        }
+
+        .form {
+            //border: 1px solid green;
+            @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 0%, $flex_d: column);
+            @include size(60%, 70%);
+
+            label {
+                //border: 1px solid red;
+                width: 100%;
+                @include text-layout($size: 14px, $l_height: 24px, $weight: 600, $family: "Noto Serif", $color: $text-color-2);
+                margin-bottom: 0px;
+            }
+
+            input {
+                @include size(97%, 45px); 
+                border: 1.5px solid #cbd5e1;
+                border-radius: 10px;
+                padding-left: 3%;
+                @include text-layout($size: 14px, $l_height: 24px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+            }
+
+            select {
+                @include size(100%, 45px); 
+                border: 1.5px solid #cbd5e1;
+                border-radius: 10px;
+                padding-left: 2%;
+                @include text-layout($size: 14px, $l_height: 24px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+            }
+
+            button {
+                @include size(100%, 45px);
+                border-radius: 10px; 
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 0%, $flex_d: row);
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                top: 3%;
+
+                span {
+                    @include text-layout($size: 14px, $l_height: 24px, $weight: 600, $family: "Open Sans", $color: $tertiary-color);
+                }
+
+                &:hover {
+                    box-shadow: 0px 2px 2px 2px rgba(9, 19, 160, 0.3);
+                }
+            }
+
+            &:focus {
+                //background-color: red;
+                outline: none;
+                border: 1px solid $secondary-color;
+            }
+        }
+    }
+}

@@ -13,6 +13,14 @@ export interface ICourse {
     rating?: string,
 }
 
+///This is the interface for the nfts
+export interface INFT {
+    image?: StaticImport,
+    name?: string,
+    floor?: string, 
+    volume?: string
+}
+
 //Interface for modal store
 export interface IModalStore {
     modal: boolean;
@@ -23,6 +31,12 @@ export interface IModalStore {
 export interface IMenuStore {
     menu: boolean;
     setMenu: (status: boolean) => void
+}
+
+//Interface for is enrolled store
+export interface IIsEnrolledStore {
+    isEnrolled: boolean;
+    setIsEnrolled: (status: boolean) => void
 }
 
 //Declaring the global scope for windows interface
