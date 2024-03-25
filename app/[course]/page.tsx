@@ -21,6 +21,6 @@ const CourseInfoPage: React.FC<CourseInfoPageProps> = ({ params: { course } }) =
       )}
     </main>
   );
-};
+}
 
 export default CourseInfoPage;

@@ -48,7 +48,7 @@ import { DAppContext } from "@/context";
 export default function Home() {
   const { walletConnected } = useContext(DAppContext);
 
-  // Example course data, replace it with the appropriate course data from your application
+
   const courseData = {
     title: "Your Course Title",
     description: "Your Course Description",

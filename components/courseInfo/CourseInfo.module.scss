@@ -1,10 +1,14 @@
+/* This contains the scss for the course info component */
 
+//Libraries -->
 @import "@/styles/base.module";
-.upper {
 
+//Commencing the code -->
+.upper {
+    //border: 1px solid green;
     // @include flexBar($align: center, $justify: center, $gap: 2%);
     @include flexBar($position: absolute, $align: center, $justify: center, $gap: 5%, $flex_d: column);
-    @include size($height: 200px);
+    @include size($height: 300px);
     margin: 0px;
     left: 0px;
     top: 85px;
@@ -26,7 +30,6 @@
 
         .icon {
             color: $tertiary-color;
-      
         }
     }
 
@@ -98,6 +101,7 @@
 }
 
 .lower {
+    //border: 1px solid green;
     // @include flexBar($align: center, $justify: center, $gap: 2%);
     @include flexBar($position: absolute, $align: flex-start, $justify: center, $gap: 5%, $flex_d: column);
     @include size($height: 600px);
@@ -434,6 +438,7 @@
                 }
 
                 .rate {
+                    //border: 1px solid red;
                     @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 5px, $flex_d: row);
                     @include size(auto, 100%);
                     padding: 0% 4%;
