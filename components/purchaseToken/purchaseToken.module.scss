@@ -5,7 +5,7 @@
 
 //Commencing the code -->
 .main {
-    border: 1px solid green;
+    //border: 1px solid green;
     // @include flexBar($align: center, $justify: center, $gap: 2%);
     @include flexBar($position: absolute, $align: center, $justify: center, $gap: 5%, $flex_d: column);
     @include size($height: 600px);
@@ -13,15 +13,33 @@
     left: 0px;
     top: 85px;
 
+    .dots {
+        position: absolute;
+        z-index: 5;
+        top: 10%;
+        left: 0%;
+        
+        @include tablet {
+            left: -1%;
+        }
+
+        @include phonePro {
+            left: -4%;
+        }
+
+        @include phoneMini {
+            left: -12%;
+        }
+    }
+
     .path {
-        border: 1px solid salmon;
+        //border: 1px solid salmon;
         @include flexBar($position: relative, $align: center, $justify: flex-start, $gap: 0%, $flex_d: row);
         width: 85%;
 
         button {
             border: none;
             background-color: transparent;
-           
         }
 
         span {
@@ -34,39 +52,141 @@
     }
 
     .bottom {
-        border: 1px solid salmon;
+        //border: 1px solid salmon;
         @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 0%, $flex_d: row);
         @include size(85%, 80%);
 
         .brief {
-            border: 1px solid salmon;
+            //border: 1px solid salmon;
             @include flexBar($position: relative, $align: flex-start, $justify: flex-start, $gap: 4%, $flex_d: column);
             @include size(40%, 80%);
 
             .brief1 {
-                border: 1px solid salmon;
-                @include text-layout($size: 35px, $l_height: 45px, $weight: 700, $family: "Poppins", $color: $text-color-2);
-                width: 80%;
+                //border: 1px solid salmon;
+                @include text-layout($size: 42px, $l_height: 52px, $weight: 700, $family: "Poppins", $color: $text-color-2);
+                width: 100%;
             }
 
             .brief2 {
-                border: 1px solid salmon;
+                //border: 1px solid salmon;
                 @include text-layout($size: 16px, $l_height: 22px, $weight: 400, $family: "Poppins", $color: $text-color-2);
                 width: 70%;
             }
 
             .brief3 {
-                border: 1px solid salmon;
+                //border: 1px solid salmon;
                 @include text-layout($size: 16px, $l_height: 22px, $weight: 400, $family: "Poppins", $color: $text-color-2);
                 width: 70%;
             }
         }
 
         .card {
-            border: 1px solid saddlebrown;
-           
-        }
+            //border: 1px solid saddlebrown;
+            @include flexBar($position: relative, $align: center, $justify: center, $gap: 5%, $flex_d: column);
+            @include size(35%, 90%);
+            border-radius: 10px;
+            //box-shadow: 2px 2px 2px rgba(9, 19, 160, 0.3), 2px 2px 3px rgba(10, 18, 130, 0.3), 3px 3px 3px rgba(10, 18, 130, 0.3), 3px 3px 3px rgba(10, 18, 130, 0.3);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 
- 
+            .logo {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: column);
+                @include size(80%, 20%);
+
+                .image {
+                    @include size(40px, 40px);
+                }
+
+                span {
+                    @include text-layout($size: 16px, $l_height: 26px, $weight: 400, $family: "Noto Serif", $color: $text-color-2); 
+                }
+            }
+
+            .text {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 1%, $flex_d: column);
+                @include size(80%, 30%);
+
+                .payment {
+                    //border: 1px solid red;
+                    @include text-layout($size: 16px, $l_height: 26px, $weight: 700, $family: "Noto Serif", $color: $text-color-2); 
+                    margin-bottom: 10px;
+                }
+
+                .amount {
+                    border: 1px solid $tertiary-color-2;
+                    @include flexBar($position: relative, $align: flex-start, $justify: center, $gap: 0%, $flex_d: row);
+                    @include size(100%, 25%);
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+
+                    select {
+                        @include size(25%, 100%);
+                        @include text-layout($size: 16px, $l_height: 26px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+                        border: none;
+                    }
+                  
+                    input {
+                        position: relative;
+                        @include size(75%, 90%);
+                        @include text-layout($size: 16px, $l_height: 26px, $weight: 700, $family: "Noto Serif", $color: $text-color-2);
+                        border: none;
+                        @include flexBar($position: relative, $align: flex-start, $justify: flex-end, $gap: 0%, $flex_d: row);
+                        text-align: end;
+                    }
+                }
+
+                .wallet {
+                    //border: 1px solid red;
+                    @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 1%, $flex_d: row);
+                    //@include size(100%, 20%);
+                    width: 100%;
+
+                    .span1 {
+                        @include text-layout($size: 12px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+                    }
+
+                    .logo_ {
+                        //border: 1px solid slateblue;
+                        @include flexBar($position: relative, $align: center, $justify: center, $gap: 5px, $flex_d: row);
+                        @include size(13%, 100%);
+                    }
+                    .image_{
+                        width:21px;
+                        height:21px
+                    }
+                }
+
+                .rate {
+                    //border: 1px solid red;
+                    @include flexBar($position: relative, $align: center, $justify: space-between, $gap: 1%, $flex_d: row);
+                    width: 100%;
+
+                    .span1, .span2 {
+                        @include text-layout($size: 12px, $l_height: 20px, $weight: 400, $family: "Noto Serif", $color: $text-color-2);
+                        position: relative;
+                        width: auto;
+                        //border: 1px solid hotpink;
+                    }
+                }
+            }
+
+            button {
+                //border: 1px solid red;
+                @include flexBar($position: relative, $align: center, $justify: center, $gap: 1%, $flex_d: row);
+                @include size(80%, 12%);
+                border-radius: 10px;
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+
+                span {
+                    @include text-layout($size: 16px, $l_height: 26px, $weight: 400, $family: "Noto Serif", $color: $tertiary-color); 
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
     }
 }

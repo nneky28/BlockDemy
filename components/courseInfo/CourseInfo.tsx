@@ -123,7 +123,7 @@ const CourseInfo = ({ course_ }: { course_: ICourse | undefined }) => {
                         <div className={styles.amount}>
                             <Image
                                 className={styles.token} 
-                                alt=""
+                                alt="token"
                                 src={bdt}
                             />
                             <span>2</span>

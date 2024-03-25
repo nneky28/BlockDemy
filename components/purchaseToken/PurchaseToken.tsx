@@ -12,7 +12,7 @@ import bdt from "@/public/images/bdt.png"
 import { useRouter } from "next/navigation";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import frontend from "@/public/images/frontend.png"
+import dots from "@/public/images/dots.png"
 import { companyName } from "@/config/utils";
 
 ///Commencing the code 
@@ -25,9 +25,15 @@ const PurchaseToken = ({ course_ }: { course_: ICourse | undefined }) => {
     const stars = [0, 1, 2, 3, 4]
     const [course, setCourse] = useState<ICourse | undefined>(course_)
     const router = useRouter()
+    const [amount, setAmount] = useState<string>("")
 
   return (
     <div className={styles.main}>
+        <Image 
+            className={styles.dots}
+            alt="dots"
+            src={dots}
+        />
         <div className={styles.path}>
             <button onClick={(e) => router.push("/")}><span>Home</span></button>
             <KeyboardArrowRightIcon className={styles.icon} />
@@ -48,24 +54,38 @@ const PurchaseToken = ({ course_ }: { course_: ICourse | undefined }) => {
                       alt=""
                       src={bdt}
                     />
-                    <span>{companyName}</span>
+                    <span>{companyName} Token</span>
                 </div>
-                <div className={styles.brief}>
-                    <span className={styles.title}>{course?.title}</span>
-                    <span className={styles.description}>{course?.description}</span>
-                </div>
-                <div className={styles.total}>
-                    <span>Subtotal</span>
+                <div className={styles.text}>
+                    <span className={styles.payment}>Payment in</span>
                     <div className={styles.amount}>
-                        <Image
-                            className={styles.token} 
-                            alt=""
-                            src={bdt}
+                        <select value={"USDT"}>
+                            <option value={"USDT"} >USDT</option>
+                        </select>
+                        <input  
+                            type="text" 
+                            placeholder="$0.00" 
+                            onChange={(e) => setAmount(() => e.target.value)}
+                            value={amount}
                         />
-                        <span>2</span>
+                    </div>
+                    <div className={styles.wallet}>
+                        <span className={styles.span1}>Wallet balance</span>
+                        <div className={styles.logo_}>
+                            <Image
+                                className={styles.image_} 
+                                alt=""
+                                src={bdt}
+                            />
+                            <span><strong>0</strong></span>
+                        </div>
+                    </div>
+                    <div className={styles.rate}>
+                        <span className={styles.span1}>Conversion rate</span>
+                        <span className={styles.span2}><strong>1 USDT = 2 Blockdemy tokens</strong></span>
                     </div>
                 </div>
-                <button style={{paddingRight:'20%'}}><span>Purchase Now</span></button>
+                <button><span>Buy Now</span></button>
             </div>
         </div>
     </div>
