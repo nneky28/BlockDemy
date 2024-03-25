@@ -1,21 +1,18 @@
 "use client"
-///Course Info component
-
-///Libraries -->
-import styles from "./courseInfo.module.scss"
+import styles from './course.module.scss';
 import Image from "next/image";
 import StarIcon from '@mui/icons-material/Star';
 import { courses } from "@/config/database";
 import { useState, MouseEvent } from "react";
 import { ICourse } from "@/config/interfaces";
-import bdt from "@/public/images/bdt.png"
+import bdt from "@/public/images/bdt.png";
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import frontend from "@/public/images/frontend.png"
+import frontend from "@/public/images/frontend.png";
 import { useRouter } from "next/navigation";
 import { toLowerDash } from "@/config/utils";
 
-///Commencing the code 
+
 
 /**
  * @title Course Info Component

@@ -2,7 +2,7 @@
 ///Connect Modal component
 
 ///Libraries -->
-import styles from "./connectModal.module.scss"
+import styles from "./connectModal.module.scss";
 import { useModalStore } from "@/config/store";
 import { MouseEvent, useState, useContext } from "react";
 import CloseIcon from "@mui/icons-material/Close";
@@ -10,7 +10,6 @@ import trust from "@/public/images/trust.png"
 import coinbase from "@/public/images/coinbase.png"
 import metamask from "@/public/images/metamask.png"
 import Image from "next/image";
-import {   connectTrust, connectCoinbase } from "@/config/utils";
 import { Cartesify } from "@calindra/cartesify";
 import { BrowserProvider, Eip1193Provider } from 'ethers';
 
