@@ -15,7 +15,7 @@ const CourseInfoPage: React.FC<CourseInfoPageProps> = ({ params: { course } }) =
   return (
     <main className="course_info">
       {courseInfo ? (
-        <CourseInfo course_={courseInfo} /> 
+        <CourseInfo course_={undefined} /> 
       ) : (
         <div>No course information available</div>
       )}

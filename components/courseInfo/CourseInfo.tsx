@@ -26,7 +26,6 @@ const CourseInfo = ({ course_ }: { course_: ICourse | undefined }) => {
     const [course, setCourse] = useState<ICourse | undefined>(course_)
     const router = useRouter()
 
-    ///This function is triggered when the user clicks on enroll now
     const enrollNow = (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
         e.preventDefault()
 

@@ -1,12 +1,7 @@
-///This handles the purchase token page
-
-///Libraries -->
 import PurchaseToken from "@/components/purchaseToken/PurchaseToken"; 
-import { courses } from "@/config/database";
 import { ICourse } from "@/config/interfaces";
-import { toLowerDash, getCourse } from "@/config/utils";
+import {  getCourse } from "@/config/utils";
 
-///Commencing the code -->Course
 
 /**
  * @title Purchase Token page
