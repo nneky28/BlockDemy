@@ -1,11 +1,7 @@
 "use client";
-///Course Info component
-
-///Libraries -->
 import styles from "./courseInfo.module.scss";
 import Image from "next/image";
 import StarIcon from "@mui/icons-material/Star";
-import { courses } from "@/config/database";
 import { useState, MouseEvent, useContext } from "react";
 import { ICourse } from "@/config/interfaces";
 import bdt from "@/public/images/bdt.png";
@@ -14,8 +10,6 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import frontend from "@/public/images/frontend.png";
 import { useRouter } from "next/navigation";
 import { toLowerDash } from "@/config/utils";
-
-///Commencing the code
 import { DAppContext } from "@/context";
 
 /**

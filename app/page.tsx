@@ -65,7 +65,7 @@ export default function Home() {
             <Course />
           </>
         ) : (
-          <CourseInfo course_={courseData} /> // Pass the course data as a prop
+          <CourseInfo course_={courseData} /> 
         )}
       </div>
     </main>
