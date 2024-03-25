@@ -6,7 +6,7 @@ import { courses } from "@/config/database";
 import { ICourse } from "@/config/interfaces";
 import { toLowerDash, getCourse } from "@/config/utils";
 
-///Commencing the code -->
+///Commencing the code -->Course
 
 /**
  * @title Purchase Token page

@@ -21,8 +21,17 @@ import { DAppContext } from "@/context";
 /**
  * @title Course Info Component
  * @returns The Course Info component
+ * 
+ * 
+ * 
  */
-const CourseInfo = ({ course_ }: { course_: ICourse | undefined }) => {
+
+interface Props {
+  course_: ICourse | undefined;
+}
+
+const CourseInfo: React.FC<Props> = ({ course_ }) => {
+
   const stars = [0, 1, 2, 3, 4];
   const [course, setCourse] = useState<ICourse | undefined>(course_);
   const router = useRouter();
@@ -66,7 +75,7 @@ const CourseInfo = ({ course_ }: { course_: ICourse | undefined }) => {
             <div className={styles.div}>
               <span>{course?.rating}</span>
               {stars.map((star, id) => (
-                <StarIcon className={styles.icon} />
+                <StarIcon className={styles.icon}key={id} />
               ))}
             </div>
             <span className={styles.span}>(791 ratings)</span>

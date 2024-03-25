@@ -1,22 +1,48 @@
-///This handles the course info page
 
-///Libraries -->
-import CourseInfo from "@/components/courseInfo/CourseInfo" 
+// import CourseInfo from "@/components/courseInfo/CourseInfo" 
+// import { ICourse } from "@/config/interfaces";
+// import { courses } from "@/config/database";
+// import { toLowerDash, getCourse } from "@/config/utils";
+
+
+
+// const CourseInfoPage=({ params: { course } }: { params: { course: string }}) =>{
+//   const courseInfo: ICourse | undefined = getCourse(course);
+
+//   return (
+//     <main className="course_info">
+//       {courseInfo ? (
+//         <CourseInfo course_={courseInfo} /> 
+//       ) : (
+//         <div>No course information available</div>
+//       )}
+//     </main>
+//   );
+// };
+
+// export default CourseInfoPage;
+import CourseInfo from "@/components/courseInfo/CourseInfo";
 import { ICourse } from "@/config/interfaces";
-import { courses } from "@/config/database";
-import { toLowerDash, getCourse } from "@/config/utils";
+import { getCourse } from "@/config/utils";
 
-///Commencing the code -->
+interface CourseInfoPageProps {
+  params: {
+    course: string;
+  };
+}
 
-/**
- * @title Course info page
- */
-export default async function CourseInfoPage({ params: { course } }: { params: { course: string }}) {
-  const courseInfo: ICourse | undefined = getCourse(course)
+const CourseInfoPage: React.FC<CourseInfoPageProps> = ({ params: { course } }) => {
+  const courseInfo: ICourse | undefined = getCourse(course);
 
-    return (
-      <main className="course_info">
-        <CourseInfo course_={courseInfo} />
-      </main>
-    )
-  }
+  return (
+    <main className="course_info">
+      {courseInfo ? (
+        <CourseInfo course_={courseInfo} /> 
+      ) : (
+        <div>No course information available</div>
+      )}
+    </main>
+  );
+};
+
+export default CourseInfoPage;
